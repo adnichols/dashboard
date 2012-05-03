@@ -34,7 +34,7 @@ $show_deploys = (!$hide_deploys);
 
 <h1>Error Logs (<?php echo Dashboard::displayTime($time) ?>)</h1>
 
-<?
+<?php
 /*
 
 // Fatals (Error log)
@@ -70,7 +70,7 @@ echo $g->getDashboardHTML(280, 220);
 
 <h1>Business Graphs (<?php echo Dashboard::displayTime($time) ?>)</h1>
 
-<?
+<?php
 /*
 // Logins
 $g = new Graphite($time);
@@ -102,19 +102,19 @@ echo $g->getDashboardHTML(350, 250);
 
 <h1>Web Cluster (<?php echo Dashboard::displayTime($time) ?>)</h1>
 
-<?
+<?php
 $g = new Ganglia($time);
 $g->addMetric('ALM', null, 'load_10');
 echo $g->getDashboardHTML();
 ?>
 
-<?
+<?php
 $g = new Ganglia($time);
 $g->addMetric('webs', null, 'apache_busy_workers');
 echo $g->getDashboardHTML();
 ?>
 
-<?
+<?php
 $g = new Ganglia($time);
 $g->addReport('webs', null, 'cpu_report');
 echo $g->getDashboardHTML();
@@ -123,7 +123,7 @@ echo $g->getDashboardHTML();
 
 <h1>Outgoing Bandwidth (<?php echo Dashboard::displayTime($time) ?>)</h1>
 
-<?
+<?php
 $g = new Cacti($time);
 $g->addMetric(809, 0);
 echo '<div class="cacti_bandwidth">' . $g->getDashboardHTML() . '</div>';
